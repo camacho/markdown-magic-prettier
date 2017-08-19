@@ -46,8 +46,7 @@ console.log('hello world');
 
 All [`prettier` options](https://github.com/prettier/prettier#options) are supported.
 
-There are two defaults set:
-
+There are a few defaults set:
 <!-- AUTO-GENERATED-CONTENT:START (PRETTIER) -->
 ```js
 const defaults = {

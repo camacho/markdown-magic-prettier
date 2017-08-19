@@ -27,8 +27,9 @@ module.exports = function PRETTIER(originalContent, _options = {}, config) {
 
   const block = ['```js', prettier.format(code, options).trim(), '```'];
 
-  // Respect the indentation of the block
-  const indent = (originalContent.match(/^(\s*)/)[1] || '').length;
+  // Respect the indentation of the block - can't depend on the first line :(
+  const indent = (originalContent.split('\n').reverse()[0].match(/^(\s*)/)[1] ||
+    '').length;
 
   return block.map(line => [' '.repeat(indent), line].join('')).join('\n');
 };
