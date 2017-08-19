@@ -6,17 +6,26 @@ function wrapCode(code, header = '```js', footer = '```') {
 
 describe('markdown-magic-prettier', () => {
   it('formats code blocks', () => {
-    const code = 'console.log("hello world")'
+    const code = 'console.log("hello world")';
     expect(format(wrapCode(code))).toMatchSnapshot();
   });
 
   it('returns original content if codeblock is not found', () => {
-    expect(format('foo bar')).toMatchSnapshot()
-    expect(format('```')).toMatchSnapshot()
-  })
+    expect(format('foo bar')).toMatchSnapshot();
+    expect(format('```')).toMatchSnapshot();
+  });
 
   it('adds a closing tag if it is forgotten', () => {
-    const code = 'console.log("hello world")'
-    expect(format(wrapCode(code, '```', ''))).toMatchSnapshot()
+    const code = 'console.log("hello world")';
+    expect(format(wrapCode(code, '```', ''))).toMatchSnapshot();
   });
-})
+
+  it('respects starting and ending indents', () => {
+    const code = `
+      \`\`\`js
+      console.log("hello world")
+      \`\`\`
+    `;
+    expect(format(code)).toMatchSnapshot();
+  });
+});
