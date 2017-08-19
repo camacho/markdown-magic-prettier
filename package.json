@@ -1,6 +1,6 @@
 {
   "name": "markdown-magic-prettier",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Prettify JS blocks",
   "main": "index.js",
   "scripts": {

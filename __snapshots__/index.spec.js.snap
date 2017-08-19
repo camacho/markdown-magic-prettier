@@ -13,7 +13,7 @@ console.log('hello world');
 `;
 
 exports[`markdown-magic-prettier respects starting and ending indents 1`] = `
-"    \`\`\`js
+"   \`\`\`js
     console.log('hello world');
     \`\`\`"
 `;
