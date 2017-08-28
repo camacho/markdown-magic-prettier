@@ -19,13 +19,4 @@ describe('markdown-magic-prettier', () => {
     const code = 'console.log("hello world")';
     expect(format(wrapCode(code, '```', ''))).toMatchSnapshot();
   });
-
-  it('respects starting and ending indents', () => {
-    const code = `
-      \`\`\`js
-      console.log("hello world")
-      \`\`\`
-    `;
-    expect(format(code)).toMatchSnapshot();
-  });
 });

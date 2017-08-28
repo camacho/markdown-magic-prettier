@@ -12,12 +12,6 @@ console.log('hello world');
 \`\`\`"
 `;
 
-exports[`markdown-magic-prettier respects starting and ending indents 1`] = `
-"   \`\`\`js
-    console.log('hello world');
-    \`\`\`"
-`;
-
 exports[`markdown-magic-prettier returns original content if codeblock is not found 1`] = `"foo bar"`;
 
 exports[`markdown-magic-prettier returns original content if codeblock is not found 2`] = `"\`\`\`"`;
