@@ -8,10 +8,13 @@ const defaults = {
 module.exports = function PRETTIER(originalContent, _options = {}, config) {
   const options = Object.assign({}, defaults, _options);
 
-  const content = originalContent.trim().split('\n').map(s => s.trim());
+  const content = originalContent
+    .trim()
+    .split('\n')
+    .map((s) => s.trim());
 
   const codeblockStart = content.findIndex(
-    line => line === '```' || line === '```js'
+    (line) => line === '```' || line === '```js'
   );
 
   if (codeblockStart === -1 || codeblockStart === content.length - 1)

@@ -1,31 +1,8 @@
 {
   "name": "markdown-magic-prettier",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Prettify JS blocks",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest",
-    "docs": "node example.js",
-    "prepublish": "npm run docs",
-    "format": "prettier --single-quote --trailing-comma es5 --write \"*.js\""
-  },
-  "keywords": [
-    "markdown",
-    "prettier",
-    "prettify",
-    "format",
-    "javascript"
-  ],
-  "author": "Patrick Camacho <patrick@daftdevelopers.com>",
   "license": "MIT",
-  "devDependencies": {
-    "jest": "^20.0.4",
-    "markdown-magic": "^0.1.17",
-    "prettier": "^1.5.3"
-  },
-  "peerDependencies": {
-    "prettier": "^1.5.3"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/camacho/markdown-magic-prettier.git"
@@ -33,5 +10,31 @@
   "bugs": {
     "url": "https://github.com/camacho/markdown-magic-prettier/issues"
   },
-  "homepage": "https://github.com/camacho/markdown-magic-prettier#readme"
+  "homepage": "https://github.com/camacho/markdown-magic-prettier#readme",
+  "author": "Patrick Camacho <patrick@daftdevelopers.com>",
+  "keywords": [
+    "markdown",
+    "prettier",
+    "prettify",
+    "format",
+    "javascript",
+    "typescript",
+    "markdown-magic"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "docs": "node example.js",
+    "format": "prettier --single-quote --trailing-comma es5 --write \"*.js\"",
+    "prepublish": "npm run docs",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "prettier": "^2.0.0",
+    "markdown-magic": ">=0.1 <=2.x"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "markdown-magic": "^0.1.17",
+    "prettier": "^2.0.0"
+  }
 }
