@@ -1,11 +1,15 @@
-const prettier = require('prettier');
+import prettier from 'prettier';
 
 const defaults = {
+  parser: 'babel',
   singleQuote: true,
   trailingComma: 'es5',
 };
 
-module.exports = function PRETTIER(originalContent, _options = {}, config) {
+export default async function PRETTIER({
+  content: originalContent,
+  options: _options = {},
+}) {
   const options = Object.assign({}, defaults, _options);
 
   const content = originalContent
@@ -14,7 +18,7 @@ module.exports = function PRETTIER(originalContent, _options = {}, config) {
     .map((s) => s.trim());
 
   const codeblockStart = content.findIndex(
-    (line) => line === '```' || line === '```js'
+    (line) => line === '```' || line === '```js',
   );
 
   if (codeblockStart === -1 || codeblockStart === content.length - 1)
@@ -28,5 +32,7 @@ module.exports = function PRETTIER(originalContent, _options = {}, config) {
 
   const code = content.slice(codeblockStart + 1, codeblockEnd).join('\n');
 
-  return ['```js', prettier.format(code, options).trim(), '```'].join('\n');
-};
+  const formatted = await prettier.format(code, options);
+
+  return ['```js', formatted.trim(), '```'].join('\n');
+}

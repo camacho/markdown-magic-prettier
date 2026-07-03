@@ -15,21 +15,23 @@ yarn add -D markdown-magic markdown-magic-prettier prettier
 See `example.js` for usage.
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./example.js) -->
-<!-- The below code snippet is automatically added from ./example.js -->
+
 ```js
-const fs = require('fs');
-const path = require('path');
-const markdownMagic = require('markdown-magic');
+import path from 'path';
+import { markdownMagic } from 'markdown-magic';
+import PRETTIER from './index.js';
 
 const config = {
+  matchWord: 'AUTO-GENERATED-CONTENT',
   transforms: {
-    PRETTIER: require('./index.js'),
+    PRETTIER,
   },
 };
 
-const markdownPath = path.join(__dirname, 'README.md');
-markdownMagic(markdownPath, config);
+const markdownPath = path.join(import.meta.dirname, 'README.md');
+await markdownMagic(markdownPath, config);
 ```
+
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ## Usage in markdown
@@ -37,9 +39,11 @@ markdownMagic(markdownPath, config);
 Wrap [code blocks](https://help.github.com/articles/creating-and-highlighting-code-blocks/) to format the content.
 
 <!-- AUTO-GENERATED-CONTENT:START (PRETTIER) -->
+
 ```js
 console.log('hello world');
 ```
+
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Options
@@ -48,10 +52,12 @@ All [`prettier` options](https://github.com/prettier/prettier#options) are suppo
 
 There are a few defaults set:
 <!-- AUTO-GENERATED-CONTENT:START (PRETTIER) -->
+
 ```js
 const defaults = {
   singleQuote: true,
   trailingComma: 'es5',
 };
 ```
+
 <!-- AUTO-GENERATED-CONTENT:END -->
