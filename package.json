@@ -1,8 +1,17 @@
 {
   "name": "markdown-magic-prettier",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Prettify JS blocks",
   "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/camacho/markdown-magic-prettier.git"
@@ -21,20 +30,22 @@
     "typescript",
     "markdown-magic"
   ],
-  "main": "index.js",
   "scripts": {
-    "docs": "node example.js",
-    "format": "prettier --single-quote --trailing-comma es5 --write \"*.js\"",
-    "prepublish": "npm run docs",
-    "test": "jest"
+    "test": "vitest run",
+    "docs": "node example.js && prettier --write README.md",
+    "prepublishOnly": "npm test && npm run docs && prettier --check .",
+    "format": "prettier --write ."
+  },
+  "prettier": {
+    "singleQuote": true
   },
   "peerDependencies": {
-    "prettier": "^2.0.0",
-    "markdown-magic": ">=0.1 <=2.x"
+    "prettier": "^3",
+    "markdown-magic": "^4"
   },
   "devDependencies": {
-    "jest": "^27.5.1",
-    "markdown-magic": "^0.1.17",
-    "prettier": "^2.0.0"
+    "markdown-magic": "^4.0.0",
+    "prettier": "^3.0.0",
+    "vitest": "^4.0.0"
   }
 }
