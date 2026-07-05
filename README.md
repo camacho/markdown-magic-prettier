@@ -1,3 +1,5 @@
+> **📦 This package has moved.** It now lives in the [markdown-magic-plugins](https://github.com/camacho/markdown-magic-plugins) monorepo at [`packages/prettier`](https://github.com/camacho/markdown-magic-plugins/tree/main/packages/prettier). This repository is archived; issues and contributions go to the monorepo.
+
 # markdown-magic-prettier
 
 Use [`prettier`](https://github.com/prettier/prettier) to format JS codeblocks in markdown files via [markdown-magic](https://github.com/DavidWells/markdown-magic)
